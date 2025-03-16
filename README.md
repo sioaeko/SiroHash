@@ -51,11 +51,16 @@
 ## 📸 스크린샷
 
 <div align="center">
-  <h3>🌙 다크 모드</h3>
-  <img src="./screenshot/dark-mode-screenshot.gif" alt="다크 모드 스크린샷" width="400"/>
-  
-  <h3>☀️ 라이트 모드</h3>
-  <img src="./screenshot/light-mode-screenshot.gif" alt="라이트 모드 스크린샷" width="400"/>
+  <table>
+    <tr>
+      <td align="center"><h3>🌙 다크 모드</h3></td>
+      <td align="center"><h3>☀️ 라이트 모드</h3></td>
+    </tr>
+    <tr>
+      <td><img src="./screenshot/dark-mode-screenshot.gif" alt="다크 모드 스크린샷" width="350"/></td>
+      <td><img src="./screenshot/light-mode-screenshot.gif" alt="라이트 모드 스크린샷" width="350"/></td>
+    </tr>
+  </table>
 </div>
 
 ## 🛠 기술 스택
