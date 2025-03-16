@@ -1,0 +1,141 @@
+/* 모바일 최적화를 위한 CSS */
+
+/* 기본 리셋 및 글로벌 스타일 */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  /* overscroll-behavior 대신 다른 방식으로 구현 */
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 앱 컨테이너 스타일 */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 컨텐츠 컨테이너 스타일 */
+.content-container {
+  flex: 1;
+  padding: 1rem 1rem 5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* 모든 브라우저에서 부드러운 스크롤 지원 */
+  scroll-behavior: smooth;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (min-width: 640px) {
+  .app-container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+/* 터치 최적화 */
+button, a {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* 스크롤 최적화 */
+html {
+  scroll-behavior: smooth;
+  /* Firefox scrollbar 스타일은 더 이상 사용하지 않습니다 */
+}
+
+/* WebKit 기반 브라우저를 위한 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 155, 155, 0.7);
+}
+
+/* 스크롤바 숨기기 유틸리티 클래스 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* 입력 필드 최적화 */
+input, select, textarea {
+  font-size: 16px; /* iOS에서 줌 방지 */
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* 모달 및 팝업 최적화 */
+.modal, .popup {
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  border-radius: 12px;
+}
+
+/* 모바일 반응형 그리드 */
+.mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+/* 카드 UI 최적화 */
+.card {
+  border-radius: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 모바일 터치 타겟 최적화 - 더 큰 터치 영역 */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 다크 모드 최적화 */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #2a2a2a;
+  }
+}
